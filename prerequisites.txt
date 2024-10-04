@@ -1,0 +1,18 @@
+CSS styles:
+•	Colors
+#0f6bb0, #fff – main 
+#f3f3f4 – background
+#023a63, #0F6BB0, #EE3C26 - buttons
+#7288c4 – secondary color
+#337ab7 - links
+Fonts:
+Nerisblack, inherit, "Helvetica Neue",Helvetica,Arial,sans-serif
+Logo:
+ 
+Login page
+Index page
+Personal office
+Admin panel
+Content page
+Create 
+
