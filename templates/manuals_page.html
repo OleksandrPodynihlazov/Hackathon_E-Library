@@ -1,16 +1,18 @@
 <!-- manuals_list.html -->
+{% extends 'base.html' %}
  {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuals</title>
+    <title>{% block title %} Manuals {% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/manual.css' %}">
 </head>
 <body>
     <section>
+        {% block content%}
         <ul class="manuals_list">
             {% for manual in manuals %}
             <li class="manual_item">
@@ -24,6 +26,7 @@
             </li>
             {% endfor %}
         </ul>
+        {% endblock content %}
     </section>
 </body>
 </html>

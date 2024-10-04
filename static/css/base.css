@@ -34,6 +34,7 @@ header {
     color: #fff;
     padding: 10px 0;
     width: 100%;
+    height: 15vh;
 }
 
 .desc {
@@ -88,11 +89,8 @@ header {
 nav {
     margin: 0;
     padding: 0;
-    width: 200px;
     background-color: #25659d;
-    position: fixed;
     height: 100%;
-    overflow: auto;
 }
 
 nav a {
@@ -100,6 +98,7 @@ nav a {
     color: white;
     padding: 16px;
     text-decoration: none;
+    text-align: center;
 }
 
 nav a.active {
@@ -121,12 +120,23 @@ nav ul {
 }
 
 main {
-    margin-left: 200px;
     padding: 20px;
 }
 
-section {
+
+.container{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 75vh;
+}
+
+.container > nav{
+    width: 20%;
+}
+
+.container > main{
+    width: 80%;
 }
 
 p {
@@ -143,12 +153,11 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10vh;
 }
 
 footer p {
