@@ -1,24 +1,61 @@
-body{
-    width: 70%;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
 }
-.save_link_form{
-    border:1px black;
-}
-.save_page_btn{
 
+.chat-container {
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
-.pdf_content_frame{
 
+.chat-box {
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
 }
-#chat-container{
 
+.chat-message {
+    margin-bottom: 15px;
 }
-.chat-box{
 
+.user-message {
+    text-align: right;
 }
-#input-container{
 
+.bot-message {
+    text-align: left;
 }
-.send_btn{
 
+.input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
 }
