@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Content Page 
+{% endblock title %}
+{% block Content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <h1 >{{content.title}}</h1>
+    <form id="save-link-form" method="post" action="{% url 'save_link' %}">
+        {% csrf_token %}
+        <input type="hidden" name="current_url" value="{{ request.build_absolute_uri }}">
+        <button id="save_page_btn"type="submit">Зберегти посилання</button>
+    </form>
+    
+        <iframe id="pdf_content_frame"src="{{content_url}}"></iframe>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class = "input-container">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //save button script
+        $(document).ready(function() {
+            $('#save-link-form').on('submit', function(event) {
+                event.preventDefault(); // Зупинити стандартну поведінку форми
+    
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        alert('Посилання збережено!');
+                    },
+                    error: function(xhr) {
+                        alert('Помилка при збереженні посилання.');
+                    }
+                });
+            });
+        });
+        ///////////////////////////////
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Function to add messages to the chat
+        function addMessage(message, className) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', className);
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Function to send message to the OpenAI API
+        async function sendMessage(message) {
+            const apiKey = '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'; // Replace with your API key
+            const url = 'https://api.openai.com/v1/chat/completions';
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo", // You can change this to your desired model
+                    messages: [{ role: 'user', content: message }]
+                })
+            });
+
+            const data = await response.json();
+            const botMessage = data.choices[0].message.content;
+            addMessage(botMessage, 'bot-message');
+        }
+
+        // Event listener for the send button
+        sendBtn.addEventListener('click', () => {
+            const message = userInput.value;
+            if (message.trim() !== '') {
+                addMessage(message, 'user-message');
+                userInput.value = '';
+                sendMessage(message);
+            }
+        });
+
+        // Event listener for "Enter" key press
+        userInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
+{% endblock Content %}
