@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import ManualListView
+from django.urls import path,include
+from .views import HomePageView, ManualListView
 
 urlpatterns = [
-    path('', ManualListView.as_view(), name='manuals_list'),
+    path('', HomePageView.as_view(), name='home'),
+    path('/manuals/', ManualListView.as_view(), name='manuals_list'),
 ]

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><img class="logo-img" src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <div class="title-text">
+            <p class="title">Tallaght University Hospital</p>
+            <p class="desc">E-Library</p>
+        </div>
+        <div class="title-buttons">
+            <a href=""><img class="account-button" src="{% static 'images/bell.png' %}" alt="account"></a>
+            <a href=""><img class="account-button" src="{% static 'images/account.png' %}" alt="account"></a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="">Recent</a></li>
+                <li><a href="">Manuals</a></li>
+                <li><a href="">Quizes</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% block content %} {% endblock content %}
+        </main>
+    </section>
+    <footer>
+        <p>&copy; 2024 Tallaght University Hospital</p>
+        <div class="lang-choose">
+            <a href="">English</a>
+            <a href="">Gaeilge</a>
+        </div>
+    </footer>
+</body>
+</html>
