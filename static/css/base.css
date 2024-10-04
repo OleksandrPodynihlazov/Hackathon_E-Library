@@ -9,6 +9,7 @@ body {
     color: #333;
     background-color: #f8f9fa;
     margin: 0;
+    overflow: hidden;
 }
 
 header {
@@ -123,4 +124,34 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
+}
+
+footer {
+    background-color: #0f6bb0;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin-left: 2rem;
+}
+
+.lang-choose {
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-choose a {
+    margin: 0 0.5rem;
+    color: white;
 }
