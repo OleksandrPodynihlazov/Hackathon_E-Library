@@ -1,0 +1,29 @@
+<!-- manuals_list.html -->
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuals</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/manual.css' %}">
+</head>
+<body>
+    <section>
+        <ul class="manuals_list">
+            {% for manual in manuals %}
+            <li class="manual_item">
+                <a href="">
+                    <div class="upper_block">
+                        <img src="" alt="manual_image">
+                        <h3 class="manual.manual_title">{{ manual.title }}</h3>
+                    </div>
+                    <p class="manual_description">{{ manual.description }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
