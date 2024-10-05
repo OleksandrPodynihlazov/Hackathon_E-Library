@@ -121,6 +121,7 @@ nav ul {
 
 main {
     padding: 20px;
+    margin: 0 auto;
 }
 
 
@@ -175,4 +176,48 @@ footer p {
 .lang-choose a {
     margin: 0 0.5rem;
     color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+form h1 {
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+form button[type="submit"] {
+    background-color: var(--button-color-1);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--button-color-2);
 }
