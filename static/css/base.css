@@ -101,7 +101,7 @@ nav a {
     text-align: center;
 }
 
-nav a.active {
+nav a:visited {
     background-color: #046aaa;
     color: white;
 }
