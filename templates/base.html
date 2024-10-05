@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/manual.css' %}">
 </head>
 <body>
     <header>
-        <a href="{% url 'home' %}"><img class="logo-img" src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <a href="{% url 'manuals_list' %}"><img class="logo-img" src="{% static 'images/logo.png' %}" alt="logo"></a>
         <div class="title-text">
             <p class="title">Tallaght University Hospital</p>
             <p class="desc">E-Library</p>
@@ -19,7 +20,7 @@
             <a href="{% url 'login' %}"><img class="account-button" src="{% static 'images/account.png' %}" alt="account"></a>
         </div>
     </header>
-    <section>
+    <section class="container">
         {% if user.is_authenticated %}
         <nav>
             <ul>
