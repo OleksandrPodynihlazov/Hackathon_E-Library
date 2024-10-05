@@ -16,7 +16,20 @@
             <p class="desc">E-Library</p>
         </div>
         <div class="title-buttons">
-            <a href=""><img class="account-button" src="{% static 'images/bell.png' %}" alt="account"></a>
+            <div class="notification-container">
+                <button class="notification-button" id="notificationButton">
+                    <img class="account-button bell" src="{% static 'images/bell.png' %}" alt="account">
+                    <span class="notification-count">3</span> <!-- Example count -->
+                </button>
+        
+                <div class="notification-popup" id="notificationPopup">
+                    <ul>
+                        <li>New assignment posted</li>
+                        <li>Quiz deadline extended</li>
+                        <li>New message from instructor</li>
+                    </ul>
+                </div>
+            </div>
             <a href="{% url 'account' %}"><img class="account-button" src="{% static 'images/account.png' %}" alt="account"></a>
         </div>
     </header>
@@ -42,4 +55,5 @@
         </div>
     </footer>
 </body>
+<script src="{% static 'js/base.js' %}"></script>
 </html>

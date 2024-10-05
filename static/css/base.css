@@ -73,6 +73,74 @@ header {
     transform: scale(1.1);
 }
 
+.notification-container {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-button {
+    background-color: #046aaa;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0.5rem;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.notification-popup {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.notification-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.notification-popup ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+}
+
+.notification-popup ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.notification-popup ul li:last-child {
+    border-bottom: none;
+}
+
+/* Visible popup */
+.notification-popup.show {
+    display: block;
+}
+
 .search-bar {
     width: 5rem;
     height: 2rem;
