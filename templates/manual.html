@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} Manual {% endblock title %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/manual.css' %}">
+</head>
 {% block content %}
-    <h1>{{ manual.title }}</h1>
-    <p>{{ manual.description }}</p>
-    <img src="{{ manual.image.url }}" alt="manual_image">
-    <a href="{% url 'home' %}">Back to manuals</a>
+    <div class="manual-container">
+        <h1 class="manual-title">{{ manual.title }}</h1>
+        <p class="manual-description">{{ manual.description }}</p>
+        <img class="manual-image" src="{{ manual.image.url }}" alt="manual_image">
+        <a class="back-link" href="{% url 'home' %}">Back to manuals</a>
+    </div>
 {% endblock content %}

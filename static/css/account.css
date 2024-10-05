@@ -1,0 +1,43 @@
+/* Стилі для акаунту */
+.account-container {
+    max-width: 600px; /* Максимальна ширина контейнера */
+    margin: 0 auto; /* Центрування контейнера */
+    padding: 20px; /* Внутрішні відступи */
+    background-color: #f9f9f9; /* Світлий фон */
+    border: 1px solid #ccc; /* Сірий контур */
+    border-radius: 8px; /* Скруглені кути */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+.account-title {
+    text-align: center; /* Центрування заголовка */
+    color: #333; /* Колір заголовка */
+}
+
+.account-info {
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+.account-item {
+    font-size: 16px; /* Розмір шрифту для інформації */
+    margin: 5px 0; /* Відступи між рядками */
+}
+
+.logout-form {
+    text-align: center; /* Центрування форми виходу */
+}
+
+.logout-button {
+    padding: 10px 20px; /* Внутрішні відступи кнопки */
+    font-size: 16px; /* Розмір шрифту кнопки */
+    color: white; /* Колір тексту кнопки */
+    background-color: #007bff; /* Колір фону кнопки */
+    border: none; /* Без контуру */
+    border-radius: 5px; /* Скруглені кути */
+    cursor: pointer; /* Курсор у вигляді руки */
+    transition: background-color 0.3s ease; /* Анімація зміни фону */
+}
+
+.logout-button:hover {
+    background-color: #0056b3; /* Темніший колір фону при наведенні */
+}
