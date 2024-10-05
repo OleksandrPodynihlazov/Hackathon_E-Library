@@ -18,5 +18,10 @@ class ManualDetailView(LoginRequiredMixin, DetailView):
 
 class QuizListView(ListView):
     model = Quiz
-    template_name = 'quiz_page.html'  # ваш шаблон
+    template_name = 'quiz_page.html'
     context_object_name = 'quizzes' 
+
+class QuizDetailView(DetailView):
+    model = Quiz
+    template_name = 'quiz.html'
+    context_object_name = 'quiz'
