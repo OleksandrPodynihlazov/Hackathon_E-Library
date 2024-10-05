@@ -16,7 +16,7 @@
         <ul class="quizzes_list">
             {% for quiz in quizzes %}
             <li class="quiz_item">
-                <a href="{% url 'quiz_detail' quiz.id %}">
+                <a href="{% url 'quiz' quiz.id %}">
                     <div class="upper_block">
                         <img src="{{ quiz.image.url }}" alt="quiz_image">
                         <h3 class="quiz_title">{{ quiz.title }}</h3>

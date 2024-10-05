@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Quiz {% endblock title %}
+{% block content %}
+    <h1>{{ quiz.title }}</h1>
+    <img src="{{ quiz.image.url }}" alt="quiz_image">
+    <!-- <p>{{ quiz.description }}</p> -->
+    <p>Question:</p>
+    <ul>
+        {% for question in quiz.questions.all %}
+            <li>
+                {{ question.text }}
+                <ul>
+                    {% csrf_token %}
+                    {% for choice in question.choices.all %}
+                        <li>
+                            <input type="radio" name="choice_{{ question.id }}" id="choice_{{ choice.id }}" value="{{ choice.id }}">
+                            <label for="choice_{{ choice.id }}">{{ choice.text }}</label>
+                            {% if choice.is_correct %} (Correct) {% endif %}
+                        </li>
+                    {% empty %}
+                        <li>No choices available.</li>
+                    {% endfor %}
+                    <button type="submit">Submit</button>
+                </ul>
+            </li>
+        {% empty %}
+            <li>No questions available.</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'home' %}">Back to quizes</a>
+{% endblock content %}
