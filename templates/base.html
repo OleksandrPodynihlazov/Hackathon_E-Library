@@ -16,10 +16,11 @@
         </div>
         <div class="title-buttons">
             <a href=""><img class="account-button" src="{% static 'images/bell.png' %}" alt="account"></a>
-            <a href=""><img class="account-button" src="{% static 'images/account.png' %}" alt="account"></a>
+            <a href="{% url 'login' %}"><img class="account-button" src="{% static 'images/account.png' %}" alt="account"></a>
         </div>
     </header>
     <section>
+        {% if user.is_authenticated %}
         <nav>
             <ul>
                 <li><a href="">Recent</a></li>
@@ -27,7 +28,14 @@
                 <li><a href="">Quizes</a></li>
             </ul>
         </nav>
+        {% endif %}
         <main>
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+            {% endif %}
             {% block content %} {% endblock content %}
         </main>
     </section>
