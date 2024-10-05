@@ -128,3 +128,6 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static/'))]
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # Шлях до папки media
 MEDIA_URL = '/media/'  # URL, за яким будуть доступні файли
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
