@@ -37,13 +37,23 @@
         {% if user.is_authenticated %}
         <nav>
             <ul>
-                <li><a href="">Recent</a></li>
-                <li><a href="{% url 'home' %}">Manuals</a></li>
-                <li><a href="">Quizes</a></li>
+                <li class="nav-item"><a href="">Recent</a></li>
+                <li class="nav-item"><a href="{% url 'home' %}">Manuals</a></li>
+                <li class="nav-item"><a href="{% url 'quiz_page' %}">Quizes</a></li>
             </ul>
         </nav>
         {% endif %}
         <main>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </div>
+                <div class="view-buttons">
+                    <button class="view-button" id="plate-view">Plate View</button>
+                    <button class="view-button" id="list-view">List View</button>
+                </div>
+            </div>
             {% block content %} {% endblock content %}
         </main>
     </section>
@@ -54,6 +64,7 @@
             <a href="">Gaeilge</a>
         </div>
     </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 <script src="{% static 'js/base.js' %}"></script>
 </html>

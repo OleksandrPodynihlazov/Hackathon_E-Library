@@ -1,4 +1,4 @@
-from .models import Manual
+from .models import Manual, Quiz
 from django.views.generic import ListView, TemplateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -15,3 +15,8 @@ class ManualDetailView(LoginRequiredMixin, DetailView):
     model = Manual
     template_name = 'manual.html'
     context_object_name = 'manual'
+
+class QuizListView(ListView):
+    model = Quiz
+    template_name = 'quiz_page.html'  # ваш шаблон
+    context_object_name = 'quizzes' 
