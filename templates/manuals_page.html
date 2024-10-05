@@ -16,7 +16,7 @@
         <ul class="manuals_list">
             {% for manual in manuals %}
             <li class="manual_item">
-                <a href="">
+                <a href="{% url 'manual' manual.pk %}">
                     <div class="upper_block">
                         <img src="{{ manual.image.url }}" alt="manual_image">
                         <h3 class="manual.manual_title">{{ manual.title }}</h3>
