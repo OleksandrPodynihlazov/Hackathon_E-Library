@@ -1,0 +1,32 @@
+<!-- quiz_list.html -->
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Quizzes {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+<body>
+    <section>
+        {% block content %}
+        <ul class="quizzes_list">
+            {% for quiz in quizzes %}
+            <li class="quiz_item">
+                <a href="{% url 'quiz_detail' quiz.id %}">
+                    <div class="upper_block">
+                        <img src="{{ quiz.image.url }}" alt="quiz_image">
+                        <h3 class="quiz_title">{{ quiz.title }}</h3>
+                    </div>
+                    <p class="quiz_description">{{ quiz.description }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endblock content %}
+    </section>
+</body>
+</html>
