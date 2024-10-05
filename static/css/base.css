@@ -35,8 +35,12 @@ header {
     height: 15vh;
 }
 
-.desc, .title {
+.title {
     margin-left: 1rem;
+}
+
+.desc{
+    margin-left: 0;
 }
 
 .title-text {
@@ -53,7 +57,7 @@ header {
 .logo-img {
     width: 5rem;
     height: 5rem;
-    margin-left: 1rem;
+    margin: 0 1rem;
 }
 
 .account-button {
@@ -177,7 +181,7 @@ nav ul {
 }
 
 main {
-    padding: 20px;
+    padding: 1rem;
     margin: 0 auto;
     height: 75vh;
     overflow: hidden;
@@ -281,6 +285,8 @@ form button[type="submit"]:hover {
     justify-content: space-between;
     margin-bottom: 20px;
     height: 10%;
+    padding: 0 1rem;
+
 }
 
 .search-bar {
@@ -288,9 +294,8 @@ form button[type="submit"]:hover {
     align-items: center;
     justify-content: space-between;
     border: none;
-    padding: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 70%;
 }
 
 .search-bar input[type="text"] {
@@ -323,8 +328,10 @@ form button[type="submit"]:hover {
 
 .view-buttons {
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+
 }
 
 .view-button {
@@ -334,7 +341,6 @@ form button[type="submit"]:hover {
     border-radius: 4px;
     padding: 10px 15px;
     cursor: pointer;
-    margin: 0 10px;
     transition: background-color 0.3s ease;
 }
 

@@ -61,7 +61,8 @@ ul.manuals_list {
 
 .manual_description {
     color: var(--secondary-color);
-    height: 50%;
+    height: 45%;
+    overflow: hidden;
 }
 
 .manual_title {
